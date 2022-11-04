@@ -124,7 +124,7 @@ header {
   color: var(--black-color);
   letter-spacing: 0.02em;
   position: relative;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .agency:hover {
@@ -151,7 +151,7 @@ header {
   color: var(--black-color);
   text-decoration: none;
   position: relative;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio:hover {
@@ -166,7 +166,7 @@ header {
   color: var(--black-color);
   text-decoration: none;
   position: relative;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact:hover {
@@ -214,7 +214,7 @@ header {
   line-height: 1.1;
   color: var(--gray-color);
   text-decoration: none;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .phone:hover {
@@ -449,7 +449,7 @@ main {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #afb1b8;
 }
 
@@ -483,7 +483,7 @@ main {
   padding-top: 16px;
   padding-bottom: 16px;
   fill: #afb1b8;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our_team_icon:hover {
@@ -559,7 +559,7 @@ main {
   padding-right: 22px;
   border: 0px;
   text-transform: none;
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio_button {
@@ -643,7 +643,7 @@ main {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.img-h:hover .overlay {
+.item:hover .overlay {
   transform: translateY(-90%);
   opacity: 0.8;
   background-color: var(--main-color);
@@ -667,7 +667,6 @@ main {
 .footer {
   background-color: rgba(47, 48, 58, 1);
   height: 252px;
-  width: 1600px;
   margin: auto;
   flex-wrap: nowrap;
 }
@@ -765,15 +764,15 @@ main {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: var(--white-color);
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.1);
+
+  fill: var(--white-color);
 }
 
 .social_footer_icon :hover {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--main-color);
-  fill: var(--white-color);
 }
 
 /*===FOOTER END===*/
@@ -788,7 +787,7 @@ main {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   transform: scale(1);
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -820,5 +819,19 @@ main {
   transform: scale(1);
   transition: 250ms;
 }
+
+.text_in_modal_window {
+  display: flex;
+  margin-top: 40px;
+  text-align: center;
+  color: var(--black-color);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+}
+
+/* <a class="text_in_modal_window">
+Zostaw swoje dane w formularzu poniżej
+</a> */
 
 /*===BACKDROP END===*/
