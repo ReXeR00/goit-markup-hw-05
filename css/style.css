@@ -39,7 +39,8 @@ ul {
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -186,47 +187,57 @@ header {
 }
 
 .mail {
-  top: 32px;
-  font-size: 14px;
-  line-height: 1.1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: var(--gray-color);
-  text-decoration: none;
-  transition: 250ms;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.19;
+  letter-spacing: 0.02em;
+  fill: #757575;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mail_icon_header {
+  margin-right: 10px;
 }
 
 .mail:hover {
   color: var(--main-color);
-}
-
-.envelope {
-  fill: #757575;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.envelope:hover {
   fill: var(--main-color);
 }
 
+.mail_icon_header:hover .mail {
+  color: var(--main-color);
+}
+
 .phone {
-  white-space: nowrap;
-  top: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.1;
-  color: var(--gray-color);
   text-decoration: none;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--gray-color);
+  fill: #757575;
+}
+
+.phone_icon_header {
+  margin-right: 10px;
 }
 
 .phone:hover {
   color: var(--main-color);
-}
-.vector {
-  fill: #757575;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--main-color);
 }
 
-.vector:hover {
-  fill: var(--main-color);
+.phone_icon_header:hover .phone {
+  color: var(--main-color);
 }
 
 /*===HEADER END===*/
@@ -449,7 +460,7 @@ main {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #afb1b8;
 }
 
@@ -483,7 +494,7 @@ main {
   padding-top: 16px;
   padding-bottom: 16px;
   fill: #afb1b8;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our_team_icon:hover {
@@ -639,8 +650,7 @@ main {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.03em;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item:hover .overlay {
@@ -766,12 +776,12 @@ main {
   border-radius: 50%;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: var(--white-color);
 }
 
 .social_footer_icon :hover {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--main-color);
 }
 
@@ -817,7 +827,7 @@ main {
   visibility: hidden;
   pointer-events: none;
   transform: scale(1);
-  transition: 250ms;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .div_text_widnow {
@@ -837,7 +847,7 @@ main {
 .my_form {
   width: 448px;
   height: 40px;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .my_form .input {
@@ -847,21 +857,35 @@ main {
   padding-left: 40px;
 }
 
-.my_form .modal_icon {
+.my_form .modal_icon_user {
   position: absolute;
   width: 12px;
   height: 12px;
   padding-left: 15px;
   padding-top: 14px;
-  fill: var(--black-color);
 }
-.my_form .inout:focus {
+
+.my_form .modal_icon_phone {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  padding-left: 14.27px;
+  padding-top: 14px;
 }
+
+.my_form .modal_icon_mail {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  padding-left: 15px;
+  padding-top: 13.5px;
+}
+
 .fieldset:has(input:focus) {
   border-color: var(--main-color);
 }
 
-.fieldset:has(.modal_icon:focus) {
+.fieldset:has(input:focus) .modal_icon_user {
   fill: var(--main-color);
 }
 
@@ -869,7 +893,6 @@ main {
   position: absolute;
   top: -24px;
   font-size: 12px;
-  font-weight: 400;
   letter-spacing: 0.01em;
   color: #757575;
 }
@@ -880,9 +903,92 @@ main {
   width: 448px;
   height: 40px;
   margin-left: 40px;
-  margin-top: 40px;
+  margin-top: 28px;
   border-radius: 4px;
   padding: 0;
+  border: 1px solid rgba(33, 33, 33, 0.2);
 }
 
-/*===BACKDROP END===*/ ;
+.fieldset_comment {
+  display: flex;
+  position: relative;
+  width: 448px;
+  height: 120px;
+  margin-left: 40px;
+  margin-top: 28px;
+  border-radius: 4px;
+  padding: 0;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.text-area {
+  margin-top: 12px;
+  margin-left: 16px;
+  width: 416px;
+  height: 96px;
+  font-size: 12px;
+  border: 0;
+  outline: 0;
+}
+
+::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  border: none;
+  position: absolute;
+}
+
+.legal-checkbox {
+  display: flex;
+  margin-left: 54px;
+  height: 24px;
+  margin-top: 20px;
+}
+
+.legal-checkbox p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--gray-color);
+}
+
+.input_checkbox {
+  margin-right: 7px;
+}
+
+.regulations {
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--main-color);
+  text-decoration: underline var(--main-color);
+}
+
+.privacy_policy {
+  letter-spacing: 0.03em;
+
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--main-color);
+  text-decoration: underline var(--main-color);
+}
+
+.modal_button {
+  margin-left: 164px;
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+  color: var(--white-color);
+  background: var(--main-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/*===BACKDROP END===*/
