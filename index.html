@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./node_modules/modern-normalize/modern-normalize.css"/>
     <link href="./css/style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
+      rel="stylesheet" 
     />
-    <link
-      rel="stylesheet"
-      href="node_modules/modern-normalize/modern-normalize.css"
-    />
+   
     <title>WebStudio</title>
   </head>
   <body>
@@ -41,14 +39,13 @@
           </ul>
     
         <ul class="list contact_list">
-          <li class="envelope">
-            <svg width="16" height="12"><use xlink:href="./images/icons.svg#envelope"></use></svg>
-            <a class="mail" href="mailto:info@devstudio.com">info@devstudio.com</a
-            >
+          <li class="mail"  href="mailto:info@devstudio.com">
+            <svg class="mail_icon_header" width="16" height="12"><use  xlink:href="./images/icons.svg#envelope"></use></svg>
+            <a  >info@devstudio.com</a>
           </li>
-          <li class="vector"> 
-            <svg width="10" height="16"><use xlink:href="./images/icons.svg#Vector"></use></svg>
-            <a class="phone" href="tel:+48 111 111 111">+48 111 111 111</a>
+          <li class="phone" href="tel:+48 111 111 111"> 
+            <svg class="phone_icon_header" width="10" height="16"><use xlink:href="./images/icons.svg#Vector"></use></svg>
+            <a >+48 111 111 111</a>
           </li>
         </ul>
       </div>
@@ -280,9 +277,37 @@
   <form class="my_form">
     <fieldset class="fieldset">
     <label class="label">Imie</label>
-    <svg class="modal_icon"><use href="./images/icons.svg#user-icon"></use></svg>
-    <input class="input" type="text"/>
+    <svg class="modal_icon_user"><use href="./images/icons.svg#user-icon"></use></svg>
+    <input class="input" type="name"/>
   </fieldset>
+
+  <fieldset class="fieldset">
+    <label class="label">Telefon</label>
+    <svg class="modal_icon_phone"><use href="./images/icons.svg#phone"></use></svg>
+    <input class="input"
+     type="tel"
+ 
+     />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <label class="label" >Email</label>
+    <svg class="modal_icon_mail"><use href="./images/icons.svg#mail"></use></svg>
+    <input class="input" type="email" name="email"/>
+  </fieldset>
+
+  <fieldset class="fieldset_comment">
+    <label class="label">Komentarz</label>
+    <input  class="text-area" type="textarea" placeholder="Wprowadź tekst" rows="5" maxlength="100">
+  </fieldset>
+
+  <label class="legal-checkbox">
+    
+  
+<input class="input_checkbox" type="checkbox" id="legal" />
+<p>Oświadczam iż akceptuję <span href="#" class="regulations"> Regulamin </span> i<span href="#" class="privacy_policy"> Politykę Prywatności.</span></p>
+  </label>
+  <button class="modal_button" type="button">Wyślij</button>
   </form>
  <button type="button" class="close-btn"  data-modal-close ><svg width="11" height="11"><use href="./images/icons.svg#Ex"></use></svg></button>
 </div>
